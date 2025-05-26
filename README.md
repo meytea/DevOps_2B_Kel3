@@ -9,17 +9,7 @@ Proyek ini merupakan arsitektur aplikasi berbasis Docker yang terdiri dari tiga 
 
 ## 📦 Struktur Folder
 
-Kel3_SBTA/
-├── backend/
-│   └── docker/
-│       ├── mysql/
-│       ├── nginx/
-│       └── php/
-├── frontend/
-├── my-laravel/
-├── docker-compose.yml
-├── Dockerfile
-└── README.md
+![image](https://github.com/user-attachments/assets/445f00e0-b09a-45c7-b79c-6709427b7194)
 
 
 ---
