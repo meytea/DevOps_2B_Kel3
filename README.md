@@ -83,6 +83,20 @@ docker ps
 ```
 ----
 
+## 🌐 Cara Mengakses Aplikasi
+Setelah container berjalan, kamu dapat mengakses layanan sebagai berikut (asumsi konfigurasi default dan Nginx sebagai reverse proxy):
+```bash
+| No | Layanan        | URL Akses                                      | Port Host → Container | Deskripsi                                                |
+| -- | -------------- | ---------------------------------------------- | --------------------- | -------------------------------------------------------- |
+| 1  | **Backend**    | [http://localhost:8080](http://localhost:8080) | 8080 → 80             | Nginx melayani backend berbasis PHP                      |
+| 2  | **Frontend**   | [http://localhost:8082](http://localhost:8082) | 8082 → 80             | Nginx melayani frontend berbasis PHP                     |
+| 3  | **phpMyAdmin** | [http://localhost:8081](http://localhost:8081) | 8081 → 80             | GUI untuk mengelola database MySQL                       |
+| 4  | **MySQL**      | `localhost:3307`                               | 3307 → 3306           | Akses MySQL lewat client (DBeaver, MySQL Workbench, dll) |
+
+```
+
+----
+
 ## 📌 Catatan
 - Untuk menghentikan semua container:
 ```bash
