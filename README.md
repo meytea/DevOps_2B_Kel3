@@ -1,4 +1,4 @@
-# 🐳 KEL3_SBTA - Sistem Berbasis Teknologi Awan
+# 🐳 KEL3_SBTA 
 
 Proyek ini merupakan arsitektur aplikasi berbasis Docker yang terdiri dari tiga bagian utama:
 - **Frontend**
