@@ -84,16 +84,14 @@ docker ps
 ----
 
 ## 🌐 Cara Mengakses Aplikasi
-Setelah container berjalan, kamu dapat mengakses layanan sebagai berikut (asumsi konfigurasi default dan Nginx sebagai reverse proxy):
-```bash
-| No | Layanan        | URL Akses                                      | Port Host → Container | Deskripsi                                                |
-| -- | -------------- | ---------------------------------------------- | --------------------- | -------------------------------------------------------- |
-| 1  | **Backend**    | [http://localhost:8080](http://localhost:8080) | 8080 → 80             | Nginx melayani backend berbasis PHP                      |
-| 2  | **Frontend**   | [http://localhost:8082](http://localhost:8082) | 8082 → 80             | Nginx melayani frontend berbasis PHP                     |
-| 3  | **phpMyAdmin** | [http://localhost:8081](http://localhost:8081) | 8081 → 80             | GUI untuk mengelola database MySQL                       |
-| 4  | **MySQL**      | `localhost:3307`                               | 3307 → 3306           | Akses MySQL lewat client (DBeaver, MySQL Workbench, dll) |
-
-```
+| No | Layanan                | URL Akses                                      | Port Host → Container | Container Name             | Deskripsi                                            |
+| -- | ---------------------- | ---------------------------------------------- | --------------------- | -------------------------- | ---------------------------------------------------- |
+| 1  | **Backend (Nginx)**    | [http://localhost:8080](http://localhost:8080) | 8080 → 80             | `si_bimbingan_ta-nginx`    | Web server Nginx untuk backend PHP                   |
+| 2  | **Backend (PHP-FPM)**  | –                                              | –                     | `app_network`              | Menjalankan kode PHP backend (tanpa akses langsung)  |
+| 3  | **Frontend (Nginx)**   | [http://localhost:8082](http://localhost:8082) | 8082 → 80             | `SI_Bimbingan_TA_fe-nginx` | Web server Nginx untuk frontend PHP                  |
+| 4  | **Frontend (PHP-FPM)** | –                                              | –                     | `si_bimbingan_ta_fe-app`   | Menjalankan kode PHP frontend (tanpa akses langsung) |
+| 5  | **phpMyAdmin**         | [http://localhost:8081](http://localhost:8081) | 8081 → 80             | `bimbingan-phpmyadmin`     | Antarmuka GUI untuk database MySQL                   |
+| 6  | **MySQL**              | `localhost:3307`                               | 3307 → 3306           | `bimbingan`                | Layanan database MySQL                               |
 
 ----
 
@@ -103,5 +101,6 @@ Setelah container berjalan, kamu dapat mengakses layanan sebagai berikut (asumsi
 docker-compose down
 ```
 - Pastikan tidak ada service yang menggunakan port yang sama dengan service di docker-compose.yml.
+- Pastikan port 8080, 8081, 8082, dan 3307 tidak digunakan oleh aplikasi lain di sistem kamu.
 - Selalu periksa file konfigurasi seperti nginx, php, dan mysql agar sesuai dengan kebutuhan proyek.
 - Jika menggunakan .env, pastikan file tersebut tersedia dan terisi dengan benar.
