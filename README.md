@@ -9,8 +9,13 @@ Proyek ini merupakan arsitektur aplikasi berbasis Docker yang terdiri dari tiga 
 
 ## 📦 Struktur Folder
 
-![image](https://github.com/user-attachments/assets/445f00e0-b09a-45c7-b79c-6709427b7194)
-
+KEL3_SBTA/
+├── backend/ # Kode backend (API)
+├── frontend/ # Kode frontend (UI)
+├── docker/ # Konfigurasi service docker (php, nginx, mysql)
+├── docker-compose.yml # File utama untuk orkestrasi container
+├── Dockerfile # Instruksi build image
+└── README.md # Dokumentasi proyek
 
 ---
 
