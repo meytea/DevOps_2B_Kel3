@@ -1,11 +1,26 @@
-# 🐳 KEL3_SBTA 
+# 📦 KEL3_SISTEM BIMBINGAN TUGAS AKHIR 
 
-Proyek ini merupakan arsitektur aplikasi berbasis Docker yang terdiri dari tiga bagian utama:
+Repositori ini merupakan bagian dari tugas mata kuliah Pemrograman Berbasis Framework (PBF) yang mengimplementasikan prinsip DevOps menggunakan Docker dan Docker Compose.
 - **Frontend**
 - **Backend**
-- **Service pendukung** (PHP, MySQL, Nginx) melalui Docker
+- **Database**
+- **Nginx**
+- **PHP**
 
 ---
+
+## 🔧 Apa Itu DevOps?
+DevOps adalah praktik yang menggabungkan Development (Dev) dan Operations (Ops) dengan tujuan untuk meningkatkan efisiensi pengembangan perangkat lunak, deployment otomatis, dan kolaborasi tim.
+
+---
+
+## 🐳 Apa Itu Docker?
+Docker adalah platform open-source yang memungkinkan developer untuk mengemas aplikasi dan semua dependensinya ke dalam sebuah unit standar yang disebut container.
+Keunggulan Docker:
+- Portabilitas tinggi (bisa dijalankan di berbagai environment)
+- Konsistensi lingkungan pengembangan dan produksi
+- Isolasi layanan (tidak saling terganggu)
+- Mudah dalam deployment dan scaling
 
 ## 📦 Struktur Folder
 ```bash
@@ -31,22 +46,48 @@ KEL3_SBTA/
 ├── docker-compose.yml
 └── Dockerfile             # Kalau ini tidak digunakan, bisa dihapus
 
-
-
+```
 ---
 
-## 🚀 Cara Menjalankan Proyek
+## 🛠️ Persiapan
 
+1. Install Docker dan Docker Compose
 Pastikan Anda sudah menginstall:
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
-### 1. Clone repositori (jika belum)
+Untuk memastikan instalasi berhasil:
 ```bash
-git clone <url-repo> frontend
-git clone <url-repo> backend
-cd KEL3_SBTA
+docker -v
+docker-compose -v
+```
 
-### 2. Jalankan dengan Docker Compose
+2. Clone Repository
+Buat sebuah folder bary, lalu clone repository ini ke dalamnya:
 ```bash
-docker-compose up --build
+git clone <URL_REPOSITORY> frontend //dari repo github backend
+git clone <URL_REPOSITORY> backend //dari repo github frontend
+git clone <URL_REPOSITORY> //dari repo devops
+
+```
+---
+
+## 🚀 Cara Menjalankan 
+Untuk membangun dan menjalankan semua container sekaligus:
+```bash
+docker-compose up -d --build
+```
+Lalu cek apakah container sudah berjalan dengan:
+```bash
+docker ps
+```
+----
+
+## 📌 Catatan
+- Untuk menghentikan semua container:
+```bash
+docker-compose down
+```
+- Pastikan tidak ada service yang menggunakan port yang sama dengan service di docker-compose.yml.
+- Selalu periksa file konfigurasi seperti nginx, php, dan mysql agar sesuai dengan kebutuhan proyek.
+- Jika menggunakan .env, pastikan file tersebut tersedia dan terisi dengan benar.
