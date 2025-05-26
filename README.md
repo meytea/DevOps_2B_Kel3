@@ -8,8 +8,29 @@ Proyek ini merupakan arsitektur aplikasi berbasis Docker yang terdiri dari tiga 
 ---
 
 ## 📦 Struktur Folder
+```bash
+KEL3_SBTA/
+│
+├── backend/
+│   └── ...                # Kode backend \
+│
+├── frontend/
+│   └── ...                # Kode frontend 
+│
+├── docker/
+│   ├── mysql/
+│   │   ├── init.sql       # SQL untuk inisialisasi database (opsional)
+│   │   └── Dockerfile     # Optional: jika ingin kustomisasi image MySQL
+│   │
+│   ├── nginx/
+│   │   └── default.conf   # Konfigurasi reverse proxy Nginx
+│   │
+│   └── php/
+│       └── Dockerfile     # Image PHP, biasanya berisi Apache + PHP
+│
+├── docker-compose.yml
+└── Dockerfile             # Kalau ini tidak digunakan, bisa dihapus
 
-![image](https://github.com/user-attachments/assets/3b924a7d-b9ab-475c-8b56-7dba22702a52)
 
 
 ---
