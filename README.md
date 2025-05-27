@@ -1,11 +1,7 @@
 # 📦 KEL3_SISTEM BIMBINGAN TUGAS AKHIR 
 
 Repositori ini merupakan bagian dari tugas mata kuliah Pemrograman Berbasis Framework (PBF) yang mengimplementasikan prinsip DevOps menggunakan Docker dan Docker Compose.
-- **Frontend**
-- **Backend**
-- **Database**
-- **Nginx**
-- **PHP**
+
 
 ---
 
