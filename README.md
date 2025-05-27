@@ -27,24 +27,26 @@ Keunggulan Docker:
 KEL3_SBTA/
 │
 ├── backend/
-│   └── ...                # Kode backend \
+│   └── ...                
 │
 ├── frontend/
-│   └── ...                # Kode frontend 
+│   └── ...               
 │
 ├── docker/
 │   ├── mysql/
-│   │   ├── init.sql       # SQL untuk inisialisasi database (opsional)
-│   │   └── Dockerfile     # Optional: jika ingin kustomisasi image MySQL
+│   │   └── my.cnf    
 │   │
 │   ├── nginx/
-│   │   └── default.conf   # Konfigurasi reverse proxy Nginx
+|   |   ├── app.conf
+|   |   ├── backend.conf
+│   │   └── frontend.conf  
 │   │
 │   └── php/
-│       └── Dockerfile     # Image PHP, biasanya berisi Apache + PHP
+|   |   ├── local.ini
+│       └── www.conf
 │
 ├── docker-compose.yml
-└── Dockerfile             # Kalau ini tidak digunakan, bisa dihapus
+└── Dockerfile             
 
 ```
 ---
