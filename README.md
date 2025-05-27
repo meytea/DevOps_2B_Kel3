@@ -25,28 +25,31 @@ Keunggulan Docker:
 ## 📦 Struktur Folder
 ```bash
 KEL3_SBTA/
+├── backend/                     
 │
-├── backend/
-│   └── ...                
+├── frontend/                   
 │
-├── frontend/
-│   └── ...               
-│
-├── docker/
-│   ├── mysql/
-│   │   └── my.cnf    
+├── docker/                    
+│   ├── mysql/                  
+│   │   └── my.cnf             
 │   │
-│   ├── nginx/
-|   |   ├── app.conf
-|   |   ├── backend.conf
-│   │   └── frontend.conf  
+│   ├── nginx/                 
+│   │   └── conf.d/           
+│   │       ├── app.conf          
+│   │       ├── backend.conf      
+│   │       └── frontend.conf     
 │   │
-│   └── php/
-|   |   ├── local.ini
-│       └── www.conf
+│   └── php/                   
+│       ├── local.ini         
+│       └── www.conf          
 │
-├── docker-compose.yml
-└── Dockerfile             
+│
+├── docker-compose.yml        
+│
+├── Dockerfile               
+│
+└── README.md                 
+          
 
 ```
 ---
